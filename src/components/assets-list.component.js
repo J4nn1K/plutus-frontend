@@ -49,20 +49,23 @@ export default class AssetsList extends Component {
         <p class="text-xl font-medium pt-6">Assets</p>
         <ul>
           {assets.map((asset) =>
-            <div className="mb-4 p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+            <div className="mb-4 p-4 max-w-sm mx-auto bg-base-100 rounded-xl shadow-lg flex items-center space-x-4">
               <div>
-                <img src={process.env.PUBLIC_URL + 'img/' + asset.name + '.svg'} className="h-12 w-12" />
+                <img src={process.env.PUBLIC_URL + 'img/' + asset.name + '.svg'} className="h-10 w-10" />
               </div>
               <div class="flex-1">
-                <p className="text-xl font-medium text-black">{asset.name}</p>
-                <p className="text-slate-500">{asset.identification}</p>
+                <div class="flex flex-row items-end">
+                  <p class="font-medium text-primary-content">{asset.name}</p>
+                  <p class="text-slate-500 px-2">{asset.identification}</p>
+                </div>
+                <p className="text-sm text-slate-500">{asset.amount}</p>
               </div>
               <div>
-                <p className="text-xl font-medium text-black">1.234€</p>
-                <p className="text-slate-500">{asset.amount}</p>
+                <p className="font-medium text-primary-content">1.234,56€</p>
+                <p className="text-sm text-slate-500">6.543,21€</p>
               </div>
               <div>
-                <a href="#add-asset"><DotsVerticalIcon className="h-6 w-6"/></a>
+                <a href="#add-asset"><DotsVerticalIcon className="h-6 w-6" /></a>
               </div>
             </div>
           )}
@@ -89,8 +92,19 @@ export default class AssetsList extends Component {
                 </label>
                 <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs"></input>
               </div>
+              <select class="select select-bordered w-full max-w-xs mt-3">
+                <option disabled selected>Select Identification</option>
+                <option>ISIN</option>
+                <option>Cryptocurrency Symbol</option>
+              </select>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">ISIN</span>
+                </label>
+                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"></input>
+              </div>
               <div class="modal-action">
-              <a href="#" class="btn btn-outline">Cancel</a>
+                <a href="#" class="btn btn-outline">Cancel</a>
                 <a href="#" class="btn">Save</a>
               </div>
             </div>
