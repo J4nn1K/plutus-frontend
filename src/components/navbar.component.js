@@ -5,7 +5,7 @@ import { MenuAlt2Icon, CogIcon } from "@heroicons/react/outline"
 export default class Navbar extends Component {
   render() {
     return (
-      <div class="navbar bg-base-100">
+      <div class="navbar bg-base-100 shadow-lg">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost btn-circle">

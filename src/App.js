@@ -8,9 +8,9 @@ import { CogIcon } from "@heroicons/react/outline"
 class App extends Component {
   render() {
     return (
-      <div>
+      <div class="bg-base-200">
         <Navbar/>
-        <div class="px-2">
+        <div class="p-3">
           <Balance/>
           <AssetsList/>
         </div>
