@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AssetDataService from "../services/asset.service";
 import "../App.css";
-import { RefreshIcon } from "@heroicons/react/outline"
+import { RefreshIcon, PlusIcon } from "@heroicons/react/outline"
 
 export default class AssetsList extends Component {
   constructor(props) {
@@ -62,9 +62,36 @@ export default class AssetsList extends Component {
             </div>
           )}
         </ul>
-        <button className="p-6 max-w-sm mx-auto bg-white shadow-lg rounded-xl text-black flex" onClick={this.refreshList}>
-          <RefreshIcon className="h-6 w-6"/>
-        </button>
+
+        <button onClick={this.refreshList} class="btn btn-circle"><RefreshIcon className="h-6 w-6" /></button>
+
+        <a href="#add-asset" class="btn btn-circle"><PlusIcon className="h-6 w-6" /></a>
+
+        {/* CREATE ASSET MODAL */}
+        <div class="form-control w-full max-w-xs">
+          <div class="modal" id="add-asset">
+            <div class="modal-box">
+              <h2 class="font-bold text-lg">Add Asset</h2>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">Asset Name</span>
+                </label>
+                <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"></input>
+              </div>
+              <div class="form-control w-full max-w-xs">
+                <label class="label">
+                  <span class="label-text">Quantity</span>
+                </label>
+                <input type="number" placeholder="Type here" class="input input-bordered w-full max-w-xs"></input>
+              </div>
+              <div class="modal-action">
+              <a href="#" class="btn btn-outline">Cancel</a>
+                <a href="#" class="btn">Save</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }
