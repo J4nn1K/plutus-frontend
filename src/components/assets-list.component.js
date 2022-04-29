@@ -55,13 +55,13 @@ export default class AssetsList extends Component {
               </div>
               <div class="flex-1">
                 <div class="flex flex-row items-end">
-                  <p class="font-medium text-primary-content">{asset.name}</p>
+                  <p class="font-medium">{asset.name}</p>
                   <p class="text-slate-500 px-2">{asset.identification}</p>
                 </div>
                 <p className="text-sm text-slate-500">{asset.amount}</p>
               </div>
               <div>
-                <p className="font-medium text-primary-content">1.234,56€</p>
+                <p className="font-medium">1.234,56€</p>
                 <p className="text-sm text-slate-500">6.543,21€</p>
               </div>
               <div>
@@ -110,7 +110,6 @@ export default class AssetsList extends Component {
             </div>
           </div>
         </div>
-
       </div>
     );
   }
